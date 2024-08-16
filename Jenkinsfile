@@ -53,9 +53,10 @@ pipeline {
                         ssh -i ${SSH_KEY} -o StrictHostKeyChecking=no ubuntu@${EC2_HOST} <<EOF
 sudo docker stop ${CONTAINER_NAME} || true
 sudo docker rm ${CONTAINER_NAME} || true
-sudo docker network create ${NETWORK_NAME} || true
 sudo docker pull ${IMAGE_NAME}
-sudo docker run -d --name ${CONTAINER_NAME} --network ${NETWORK_NAME} -p 3000:3000 --restart unless-stopped ${IMAGE_NAME}
+sudo docker run -d -p 3306:3306 --restart unless-stopped:/var/lib/mysql docker.io/mariadb
+sudo docker run -d -p 8080:80 --restart unless-stopped docker.io/phpmyadmin
+sudo docker run -d --name ${CONTAINER_NAME} -p 80:80 --restart unless-stopped ${IMAGE_NAME}
 EOF
                         '''
                     }
