@@ -56,7 +56,7 @@ sudo docker rm ${CONTAINER_NAME} || true
 sudo docker network create ${NETWORK_NAME} || true
 sudo docker pull ${IMAGE_NAME}
 sudo docker run -d --name ${CONTAINER_NAME} --network ${NETWORK_NAME} -p 3000:3000 --restart unless-stopped ${IMAGE_NAME}
-EOF  
+EOF
                         '''
                     }
                 }
