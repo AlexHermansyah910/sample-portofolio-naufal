@@ -56,7 +56,7 @@ sudo docker rm ${CONTAINER_NAME} || true
 sudo docker pull ${IMAGE_NAME}
 sudo docker run -d -p 3306:3306 --restart unless-stopped:/var/lib/mysql docker.io/mariadb
 sudo docker run -d -p 8080:80 --restart unless-stopped docker.io/phpmyadmin
-sudo docker run -d --name ${CONTAINER_NAME} -p 80:80 --restart unless-stopped ${IMAGE_NAME}
+sudo docker run -d --name ${CONTAINER_NAME} -p 3000:3000 --restart unless-stopped ${IMAGE_NAME}
 EOF
                         '''
                     }
