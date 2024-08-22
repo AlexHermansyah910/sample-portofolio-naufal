@@ -63,7 +63,7 @@ const Showcase = () => {
                 </Heading>
 
                 <ParaText as="p" top="2rem" bottom="4rem">
-                    Hello, my name is Abdul Raffi Naufal and I'm a Web developer.
+                    Hello, my name is Alex Hermansyah and I'm a Web developer.
                     I love building websites and applications. I like to improve my skill and get more experience. I also have a strong interest in Cyber Security.
                 </ParaText>
 
